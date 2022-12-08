@@ -11,6 +11,7 @@ class products_controller extends main_controller
 	public function add() {
 		if(isset($_POST['btn_submit'])) {
 			$productData = $_POST['data'][$this->controller];
+			$productData['created_at'] = date("y-m-d h:i:s");
 			if(!empty($productData['product_name']))  {
 				$productData['photo'] = SimpleImage_Component::uploadImg($_FILES, $this->controller);
 				$product = product_model::getInstance();
@@ -27,6 +28,7 @@ class products_controller extends main_controller
 		$this->setProperty('record',$record);
 		if(isset($_POST['btn_submit'])) {
 			$productData = $_POST['data'][$this->controller];
+			$productData['updated_at'] = date('y-m-d h:i:s');
 			if(!empty($productData['product_name']))  {
 				if(isset($_FILES) and $_FILES["image"]["name"]) {
 					if(file_exists(UploadREL .$this->controller.'/'.$record['photo']))

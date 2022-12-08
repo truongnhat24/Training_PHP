@@ -1,5 +1,5 @@
 <?php 
-$params = (isset($this->record))? array('id'=>$this->record['product_id']):'';
+$params = (isset($this->record))? array('id'=>$this->record['id']):'';
 ?>
 <form method="post" enctype="multipart/form-data" action="<?php echo html_helpers::url(
 		array('ctl'=>'products', 

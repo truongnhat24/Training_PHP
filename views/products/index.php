@@ -21,7 +21,7 @@ array_push($mediaFiles['css'], RootREL.'media/fontawesome/css/all.css');
         <?php if($this->records) { ?>
 			<?php while($row = mysqli_fetch_array($this->records)) : ?>
 			  <tr>
-				<td width="5%" scope="row"><?php echo $row['product_id']; ?></td>
+				<td width="5%" scope="row"><?php echo $row['id']; ?></td>
 				<td width="15%"><?php echo $row['product_name']; ?></td>
 				<td width="10%"><?php echo $row['producer']; ?></td>
 				<td width="10%"><?php echo $row['category']; ?></td>
@@ -31,7 +31,7 @@ array_push($mediaFiles['css'], RootREL.'media/fontawesome/css/all.css');
 								['ctl'=>'products', 
 									  'act'=>'view', 
 									  'params'=>array(
-										'id'=>$row['product_id']
+										'id'=>$row['id']
 										)
 								]); ?>">
 					<i class="fa fa-eye" aria-hidden="true"></i>
@@ -40,7 +40,7 @@ array_push($mediaFiles['css'], RootREL.'media/fontawesome/css/all.css');
 								array('ctl'=>'products', 
 									  'act'=>'edit', 
 									  'params'=>array(
-										'id'=>$row['product_id']
+										'id'=>$row['id']
 								))); ?>">
 					<i class="fas fa-edit"></i>
 				  </a>
@@ -48,7 +48,7 @@ array_push($mediaFiles['css'], RootREL.'media/fontawesome/css/all.css');
 								array('ctl'=>'products', 
 									  'act'=>'del', 
 									  'params'=>array(
-										'id'=>$row['product_id']
+										'id'=>$row['id']
 								))); ?>" >
 					<i class="fas fa-trash"></i>
 				  </a>
